@@ -1,7 +1,7 @@
 {% extends "pages/base.html" %}
-{% block title %} Добавить страну {% endblock %}
+{% block title %} Добавить жанр {% endblock %}
 {% block content %}
-    <h1 class="text-danger">Добавить страну</h1>
+    <h1 class="text-danger">Добавить жанр</h1>
     <form method="post" action="">
         {% csrf_token %}
         {{ form.as_ul }}

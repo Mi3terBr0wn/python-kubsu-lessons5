@@ -1,0 +1,14 @@
+{% extends "pages/base.html" %}
+{% block title %} Жанр {{ genre.name }} {% endblock %}
+{% block content %}
+<h1>
+    {{ genre.name }}<br>
+</h1>
+
+<h1 class="text-danger">Изменить жанр</h1>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <button class="btn btn-warning" type="submit">Изменить</button>
+</form>
+{% endblock %}

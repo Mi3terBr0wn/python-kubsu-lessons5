@@ -2,14 +2,13 @@
 {% block title %} Вино {% endblock %}
 {% block content %}
 <h1>
-    {{ wine.wine_grade }}, {{ wine.sweetness }}<br>
-    Выдержка - {{ wine.extract }}<br>
-    Страна - {{ wine.country }}
+        {{ book.book_name }}
 </h1>
 <p>
-    {{ wine.text }}
+    Автор - {{ book.author }}<br>
+    Жанр - {{ book.genre }}
 </p>
-<h1 class="text-danger">Изменить вино</h1>
+<h1 class="text-danger">Изменить книгу</h1>
 <form method="post" action="">
     <div class="form-group">
         {% csrf_token %}

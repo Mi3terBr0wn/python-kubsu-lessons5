@@ -1,7 +1,7 @@
 {% extends "pages/base.html" %}
-{% block title %} Добавить сорт вина {% endblock %}
+{% block title %} Добавить книгу {% endblock %}
 {% block content %}
-    <h1 class="text-danger">Добавить сорт вина</h1>
+    <h1 class="text-danger">Добавить книгу</h1>
     <form method="post" action="">
         {% csrf_token %}
         {{ form.as_ul }}

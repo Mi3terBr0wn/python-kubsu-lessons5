@@ -1,0 +1,62 @@
+{% extends "pages/base.html" %}
+{% block title %} Литература {% endblock %}
+{% block content %}
+    <h1>Книга</h1>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+        <tr>
+            <td>{{ book.book_name }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.genre }}</td>
+            <td><a href="/book/{{book.id}}" class="btn btn-warning">Посмотреть страницу книги</a></td>
+        </tr>
+    {% endfor %}
+        </tbody>
+        <br>
+    </table>
+    <a href="{% url 'add_book' %}" class="btn btn-dark">Добавить книгу</a>
+    <h1>Жанры</h1>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Жанр</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for genre in genres %}
+        <tr>
+            <td>{{ genre.name }}</td>
+            <td><a href="/genre/{{genre.id}}" class="btn btn-warning">Посмотреть страницу жанра</a></td>
+        </tr>
+    {% endfor %}
+        </tbody>
+        <br>
+    </table>
+    <a href="{% url 'add_genre' %}" class="btn btn-dark">Добавить жанр</a>
+    <h1>Авторы</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Автор</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td>{{ author }}</td>
+                    <td><a href="/author/{{author.id}}" class="btn btn-warning">Посмотреть страницу автора</a></td>
+                </tr>
+            {% endfor %}
+                <br>
+        </tbody>
+    </table>
+    <a href="{% url 'add_author' %}" class="btn btn-dark">Добавить автора</a>
+{% endblock %}
